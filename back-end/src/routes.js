@@ -2,9 +2,9 @@ const express = require("express")
 
 const routes = express.Router();
 
-const SessionController = require('./constrollers/SessionController')
+const RegisterController = require('./constrollers/RegisterController')
 
-routes.get('/sessions', SessionController.create)
+routes.post('/register', RegisterController.create)
 
 
 module.exports = routes

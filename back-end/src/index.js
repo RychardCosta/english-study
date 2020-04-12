@@ -7,11 +7,8 @@ const {errors} = require('celebrate')
 
 const app = express()
 
-try{
-  const DB = require('./database/db.sqlite3)
-}catch{                             
+                           
 connection.migrate.latest()
-  }
 
 app.use(cors())
 

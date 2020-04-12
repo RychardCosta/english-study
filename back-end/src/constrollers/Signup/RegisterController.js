@@ -29,7 +29,7 @@ module.exports = {
                             password: passwordHash,
                             })
                         return res.status(201).json({
-                            mensage: "Usuário cadsatrado com sucesso",
+                            mensage: "Usuário cadastrado com sucesso",
                             usuario:{id, name, email}})  
                     } catch (error) {
                         return res.status(500).json({error: error})

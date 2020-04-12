@@ -14,7 +14,7 @@ async create(req, res){
                
             const user = await connection("users").where('email', email).select("id", "name", "email").first()
             const passwordFilter = await connection("users").where('email', email).select('password').first()
-            const Token = jwt.sign(user, process.env.ACESS_TOKEN, {expiresIn: "1h"}) 
+            const Token = jwt.sign(user, process.env.ACCESS_TOKEN, {expiresIn: "1h"}) 
             
             if(user.email === email){
                 if(await bcrypt.compare(password, passwordFilter.password)){

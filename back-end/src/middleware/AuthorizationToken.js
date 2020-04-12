@@ -1,9 +1,6 @@
 const jwt = require('jsonwebtoken')
 
 
-const acess = '718b5fb998f71a1c283a58fe088e8b75d96faf7f1ced7f795c725837f761b1daa5d9efb118227de3492b08403b44066cc0f63c336577db0d9d1dbb7e2b8f52db'
-const refresh = 'f72f37158002f1564cb3a0ad4a19d290244997306939bb421fcf578dda2db075e5e35a0a84cfc18dee165d873acb09a32cc8112fd8b9226b88848615249636c2'
-
 module.exports = {
     
 
@@ -26,7 +23,7 @@ module.exports = {
             
 
 
-        jwt.verify(token, acess, (err, user) => {
+        jwt.verify(token, process.env.ACESS_TOKEN, (err, user) => {
             if(err) {return res.sendStatus(403)}
             
             req.user = user

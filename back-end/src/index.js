@@ -2,13 +2,16 @@ const express = require("express")
 const routes = require('./routes')
 const cors = require('cors')
 
-const DB = require('./database/connection')
+const connection = require('./database/connection')
 const {errors} = require('celebrate')
 
 const app = express()
 
+try{
+  const DB = require('./database/db.sqlite3)
+}catch{                             
 connection.migrate.latest()
-
+  }
 
 app.use(cors())
 
